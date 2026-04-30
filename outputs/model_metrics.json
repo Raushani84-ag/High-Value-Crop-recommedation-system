@@ -1,0 +1,111 @@
+{
+  "train_rows": 3698,
+  "test_rows": 932,
+  "positive_rate": 0.2526997840172786,
+  "models": {
+    "logistic_regression": {
+      "accuracy": 0.7092274678111588,
+      "precision": 0.45272206303724927,
+      "recall": 0.6638655462184874,
+      "f1": 0.5383304940374787,
+      "classification_report": {
+        "0": {
+          "precision": 0.8627787307032591,
+          "recall": 0.7247838616714697,
+          "f1-score": 0.7877838684416602,
+          "support": 694.0
+        },
+        "1": {
+          "precision": 0.45272206303724927,
+          "recall": 0.6638655462184874,
+          "f1-score": 0.5383304940374787,
+          "support": 238.0
+        },
+        "accuracy": 0.7092274678111588,
+        "macro avg": {
+          "precision": 0.6577503968702542,
+          "recall": 0.6943247039449785,
+          "f1-score": 0.6630571812395694,
+          "support": 932.0
+        },
+        "weighted avg": {
+          "precision": 0.7580646889602223,
+          "recall": 0.7092274678111588,
+          "f1-score": 0.7240822556646267,
+          "support": 932.0
+        }
+      }
+    },
+    "random_forest": {
+      "accuracy": 0.8744635193133047,
+      "precision": 0.7391304347826086,
+      "recall": 0.7857142857142857,
+      "f1": 0.7617107942973523,
+      "classification_report": {
+        "0": {
+          "precision": 0.9248895434462445,
+          "recall": 0.9048991354466859,
+          "f1-score": 0.9147851420247632,
+          "support": 694.0
+        },
+        "1": {
+          "precision": 0.7391304347826086,
+          "recall": 0.7857142857142857,
+          "f1-score": 0.7617107942973523,
+          "support": 238.0
+        },
+        "accuracy": 0.8744635193133047,
+        "macro avg": {
+          "precision": 0.8320099891144266,
+          "recall": 0.8453067105804858,
+          "f1-score": 0.8382479681610577,
+          "support": 932.0
+        },
+        "weighted avg": {
+          "precision": 0.8774532045385779,
+          "recall": 0.8744635193133047,
+          "f1-score": 0.8756953407810683,
+          "support": 932.0
+        }
+      }
+    },
+    "xgboost": {
+      "accuracy": 0.8873390557939914,
+      "precision": 0.7224080267558528,
+      "recall": 0.907563025210084,
+      "f1": 0.8044692737430168,
+      "classification_report": {
+        "0": {
+          "precision": 0.9652448657187994,
+          "recall": 0.8804034582132565,
+          "f1-score": 0.9208741522230596,
+          "support": 694.0
+        },
+        "1": {
+          "precision": 0.7224080267558528,
+          "recall": 0.907563025210084,
+          "f1-score": 0.8044692737430168,
+          "support": 238.0
+        },
+        "accuracy": 0.8873390557939914,
+        "macro avg": {
+          "precision": 0.8438264462373262,
+          "recall": 0.8939832417116702,
+          "f1-score": 0.8626717129830381,
+          "support": 932.0
+        },
+        "weighted avg": {
+          "precision": 0.9032328832368451,
+          "recall": 0.8873390557939914,
+          "f1-score": 0.8911484429116324,
+          "support": 932.0
+        }
+      }
+    }
+  },
+  "top3_random_forest_or_default": {
+    "top3_precision_against_evidence": 0.953125,
+    "top3_hit_rate_against_evidence": 1.0,
+    "evaluated_district_seasons": 64
+  }
+}
