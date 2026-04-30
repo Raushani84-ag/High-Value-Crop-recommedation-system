@@ -1,6 +1,7 @@
 # Step 1:
 from __future__ import annotations
-import pickle
+import joblib
+from joblib import  load
 from pathlib import Path
 
 import pandas as pd
@@ -12,7 +13,7 @@ from crop_recommendation_pipeline import recommend_top3
 BASE_DIR = Path(__file__).resolve().parent
 
 OUTPUT_DIR = BASE_DIR / "outputs"
-MODEL_PATH = OUTPUT_DIR / "models" / "random_forest.pkl"
+MODEL_PATH = OUTPUT_DIR / "models" / "random_forest.joblib"
 IMAGE_PATH = BASE_DIR / "images" / "CTAE_logo.jpg"
 
 st.set_page_config(page_title="Crop Recommendation", layout="wide")
@@ -49,8 +50,8 @@ def load_tables():
 @st.cache_resource
 def load_model():
     try:
-        with MODEL_PATH.open("rb") as f:
-            return pickle.load(f)
+         return load(MODEL_PATH)
+    
     except Exception as e:
         st.error(f"Model loading failed: {e}")
         st.stop()
