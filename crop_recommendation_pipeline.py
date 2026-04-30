@@ -4,7 +4,8 @@ import argparse
 import ast
 import json
 import math
-import pickle
+import joblib
+from joblib import dump, load
 import re
 import zipfile
 from dataclasses import dataclass
@@ -722,8 +723,9 @@ def train_models(ranking_df: pd.DataFrame, output_dir: Path) -> tuple[dict[str, 
             "f1": float(f1),
             "classification_report": classification_report(y_test, y_pred, zero_division=0, output_dict=True),
         }
-        with (model_dir / f"{name}.pkl").open("wb") as handle:
-            pickle.dump(model, handle)
+        # with (model_dir / f"{name}.pkl").open("wb") as handle:
+        #     pickle.dump(model, handle)
+        dump(model, model_dir / f"{name}.joblib")
         trained[name] = model
     return metrics, trained
 
