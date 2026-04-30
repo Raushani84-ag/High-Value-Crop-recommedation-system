@@ -10,7 +10,7 @@ This project combines **Agricultural Engineering knowledge + Machine Learning + 
 
 > *(Add your deployed app screenshot here)*
 
-![App Screenshot](assets/screenshot_placeholder.png)
+![App Screenshot](images/app_screenshot.png)
 
 ---
 
