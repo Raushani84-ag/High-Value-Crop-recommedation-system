@@ -13,7 +13,7 @@ from crop_recommendation_pipeline import recommend_top3
 BASE_DIR = Path(__file__).resolve().parent
 
 OUTPUT_DIR = BASE_DIR / "outputs"
-MODEL_PATH = OUTPUT_DIR / "models" / "random_forest.joblib"
+MODEL_PATH = OUTPUT_DIR / "models" / "xgboost.joblib"
 IMAGE_PATH = BASE_DIR / "images" / "CTAE_logo.jpg"
 
 st.set_page_config(page_title="Crop Recommendation", layout="wide")
