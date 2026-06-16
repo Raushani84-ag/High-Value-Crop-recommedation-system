@@ -1,7 +1,7 @@
 # Step 1:
 from __future__ import annotations
 import joblib
-from joblib import  load
+from joblib import load
 from pathlib import Path
 
 import pandas as pd
@@ -50,10 +50,18 @@ def load_tables():
 @st.cache_resource
 def load_model():
     try:
-         return load(MODEL_PATH)
+        if not MODEL_PATH.exists():
+            st.error(f"❌ Model file not found at: {MODEL_PATH}")
+            st.info("Make sure `outputs/models/xgboost.joblib` is in your repository")
+            st.stop()
+        
+        model = load(MODEL_PATH)
+        st.success("✅ Model loaded successfully!")
+        return model
     
     except Exception as e:
         st.error(f"Model loading failed: {e}")
+        st.info(f"Expected path: {MODEL_PATH}")
         st.stop()
 
 
